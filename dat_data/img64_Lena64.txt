@@ -1,0 +1,12 @@
+The Matlab implementation of  Lena64  Algorithm  Using: 
+ - data=SCSA2D2D 
+ - h=0.263158 
+ - gm=0.500000
+ - fs= 1
+ - PSNR0=Inf
+ These parameters givre the following results: 
+  - Nh=2505 
+  - Emin= =-7.795177e-01
+  - PSNR=51.095000
+
+ Done by Abderrazak Chahid   on 27-Aug-2017

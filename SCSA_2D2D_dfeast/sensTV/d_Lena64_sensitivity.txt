@@ -1,0 +1,6 @@
+MKL Double 
+	 h 	 gm 	 fe 	 nb_cntr_point 	 eps 	 max_refin_loop 	 guess_M0 	 cnvgce_trace_Resdl 	 intgr_Gauss_Trapez_Zolot 	 cntr_ratio 	 Run_Q_M0 	 M0 	 Emin 	 Emax 	 Scaling_Emin 	 Found Emin 	 Found Emax 	 PSNR0 	 PSNR 	 MSE0 	 MSE	 Solver time  	 Totale time 	 EigenAnalysis % 	 #Iterations 	 Nh 	  info 
+	0.310000	0.500000	1.000000	 N/A 	 N/A 	 N/A 	 N/A 	 N/A 	 N/A 	 N/A 	 N/A 	 N/A 	 N/A 	 N/A 	 N/A 	 -8.295933e-05	-7.758208e-01	inf	48.399628	0.000000	0.000014	15.935053	17.202627	92.631509	N/A	1811	0
+Feast Double
+	 h 	 gm 	 fe 	 nb_cntr_point 	 eps 	 max_refin_loop 	 guess_M0 	 cnvgce_trace_Resdl 	 intgr_Gauss_Trapez_Zolot 	 cntr_ratio 	 Run_Q_M0 	 M0 	 Emin 	 Emax 	 Scaling_Emin 	 Found Emin 	 Found Emax 	 PSNR0 	 PSNR 	 MSE0 	 MSE	 Solver time  	 Totale time 	 EigenAnalysis % 	 #Iterations 	 Nh 	  info
+	0.310000	0.500000	1.000000	1	6	20	0	1	0	10	0	300	-0.511053	0.000000	1	

@@ -1,0 +1,8 @@
+ This file containes the information about the matrix A of an image of size 64 X 64 :
+ -  non zero element =520192  / 16777216 
+ -  h parameter used = 0.245000 
+ -  Number of negative eigen values  = 2485
+ -  Minimum  negative eigen values  = -8.200000e-01
+ -  PSNR =50.100000   
+ -  time(s) = 120.851175 
+ 

@@ -1,0 +1,10 @@
+ FEAST 3.0: Search Interval [-1.08718 FEAST 3.0: Search Interval [-0.284535,0] where M0=1757
+,-0.284535] where M0=1723
+Parallel Feast Double
+h 	 gm 	 fe 	 M0 	 Emin 	 Emax 	 Nb_cntour_points 	 cntour_ratio 	 eps 	 intgr_Gauss_Trapez_Zolot 	 PSNR0 	 PSNR 	 time_eig 	 time_Split 	 Totale time 	 nb_iter  	 Nh % 	 info 	 Scaling_Emin 	  max_refin_loop 	 guess_M0 % 	 cnvgce_trace_Resdl 	 Run_Q_M0
+0.260000	0.500000	1.000000	1326	-1.087179	-0.284535	8	100	12	0	inf	50.614639	522.298247	133.163485	655.646804	5	2560	0	1	20	0	1		0
+ FEAST 3.0: Search Interval [-1.08718,-0.284535] where M0= FEAST 3.0: Search Interval [-0.284535,0] where M0=1757
+1723
+Parallel Feast Double
+h 	 gm 	 fe 	 M0 	 Emin 	 Emax 	 Nb_cntour_points 	 cntour_ratio 	 eps 	 intgr_Gauss_Trapez_Zolot 	 PSNR0 	 PSNR 	 time_eig 	 time_Split 	 Totale time 	 nb_iter  	 Nh % 	 info 	 Scaling_Emin 	  max_refin_loop 	 guess_M0 % 	 cnvgce_trace_Resdl 	 Run_Q_M0
+0.260000	0.500000	1.000000	1326	-1.087179	-0.284535	8	100	12	0	inf	50.614639	528.900718	132.837930	661.929605	5	2560	0	1	20	0	1	0

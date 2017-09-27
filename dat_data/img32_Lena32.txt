@@ -1,0 +1,11 @@
+The Matlab implementation of  the SCSA2D2D  Algorithm Using : 
+ - h=0.263158 
+ - gm=0.500000
+ - fs= 1
+ - PSNR0=Inf
+These parameters givre the following results: 
+  - Nh=560 
+  - Emin= =-7.795311e-01
+  - PSNR=48.912000
+
+ Done by Abderrazak Chahid   on 26-Aug-2017
