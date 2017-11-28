@@ -1,0 +1,5 @@
+srun: error: nid00409: tasks 0-1: Segmentation fault
+srun: Terminating job step 4305653.0
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: *** STEP 4305653.0 ON nid00409 CANCELLED AT 2017-10-14T21:13:02 ***
+srun: error: nid00409: tasks 2-15: Killed

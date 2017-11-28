@@ -1,0 +1,4 @@
+srun: error: nid07646: task 0: Exited with exit code 255
+srun: Terminating job step 4425675.0
+srun: error: nid07646: task 0: Exited with exit code 255
+srun: Terminating job step 4425675.3

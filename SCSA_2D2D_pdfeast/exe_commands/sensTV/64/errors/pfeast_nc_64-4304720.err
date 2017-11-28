@@ -1,0 +1,4 @@
+srun: error: nid06543: tasks 0-15: Exited with exit code 255
+srun: Terminating job step 4304720.0
+/var/spool/slurmd/job4304720/slurm_script: line 22: unexpected EOF while looking for matching `"'
+/var/spool/slurmd/job4304720/slurm_script: line 24: syntax error: unexpected end of file

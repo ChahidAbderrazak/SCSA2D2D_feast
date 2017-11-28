@@ -1,5 +1,0 @@
- 
- FEAST 3.0: Search Interval [-1.08718,0] where M0=3480
-[mpiexec@shihab] Sending Ctrl-C to processes as requested
-[mpiexec@shihab] Press Ctrl-C again to force abort
-APPLICATION TERMINATED WITH THE EXIT STRING: Interrupt (signal 2)

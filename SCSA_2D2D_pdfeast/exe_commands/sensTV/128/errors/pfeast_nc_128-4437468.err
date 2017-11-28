@@ -1,0 +1,8 @@
+srun: error: nid00121: tasks 0-4,6-31: Exited with exit code 255
+srun: Terminating job step 4437468.0
+slurmstepd: error: *** STEP 4437468.0 ON nid00121 CANCELLED AT 2017-11-20T10:41:34 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid00124: tasks 96-127: Exited with exit code 255
+srun: error: nid00123: tasks 64-95: Exited with exit code 255
+srun: error: nid00122: tasks 32-63: Exited with exit code 255
+srun: error: nid00121: task 5: Exited with exit code 255

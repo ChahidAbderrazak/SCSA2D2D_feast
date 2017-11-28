@@ -1,0 +1,42 @@
+
+ Solver Error !! info code=2
+
+ Solver Error !! info code=2
+
+
+Feast 3.0:  image size = 128 X 128  ,   # Sub-Intervals= 16
+
+| Search Intervals 	|-1.27699 -- -0.583623 -- -0.503811 -- -0.436899 -- -0.384094 -- -0.333081 -- -0.28507 -- -0.244982 -- -0.204517 -- -0.175757 -- -0.150192 -- -0.126725 -- -0.0990631 -- -0.0773931 -- -0.0526273 -- -0.0296029 -- 0|
+| List M0  		|483 -- 481 -- 504 -- 447 -- 466 -- 510 -- 446 -- 548 -- 470 -- 476 -- 479 -- 553 -- 433 -- 502 -- 459 -- 575|
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 Nb_cntour_points 	 cntour_ratio 	 eps 	 intgr_Gauss_Trapez_Zolot 	 PSNR0 	 PSNR 	 time_eig 	 time_Split 	 Totale time 	 nb_iter  	 Nh % 	 info
+0.260000	0.500000	1.000000	-1.276987	-0.583623	483	8	10	6	0	inf	48.688469	9235.926923	11504.416616	20743.387333	21	7462	0
+
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=pfeast_nc128
+#SBATCH --output=./sensTV/pfeast_nc_128-%j.out
+#SBATCH --error=./sensTV/errors/pfeast_nc_128-%j.err
+#SBATCH --nodes=2
+#SBATCH --time=20:30:00
+
+export MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+#srun --ntasks=8 --ntasks-per-node=4 --ntasks-per-socket=2   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=16 --ntasks-per-node=8 --ntasks-per-socket=4   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+#srun --ntasks=32 --ntasks-per-node=16 --ntasks-per-socket=8   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+#srun --ntasks=64 --ntasks-per-node=32 --ntasks-per-socket=16   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+
+echo""
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_128.sh

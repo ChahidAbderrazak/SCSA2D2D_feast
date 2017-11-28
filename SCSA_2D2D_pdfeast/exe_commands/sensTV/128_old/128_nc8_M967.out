@@ -1,0 +1,43 @@
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=pfeast_nc128
+#SBATCH --output=./sensTV/128/pfeast_nc_128-%j.out
+#SBATCH --error=./sensTV/128/errors/pfeast_nc_128-%j.err
+#SBATCH --nodes=1
+#SBATCH --time=23:59:00
+
+export MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_128.sh
+echo""
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+#srun --ntasks=8 --ntasks-per-node=4 --ntasks-per-socket=2   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=8 --ntasks-per-node=8 --ntasks-per-socket=4   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=16 --ntasks-per-node=16 --ntasks-per-socket=8   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=32 --ntasks-per-node=32 --ntasks-per-socket=16   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+
+echo""
+
+
+
+
+
+Feast 3.0:  image size = 128 X 128  ,   # Sub-Intervals= 8
+
+| Sub-Intervals| 		| -1.28 -- -0.504 -- -0.384 -- -0.285 -- -0.205 -- -0.15 -- -0.0991 -- -0.0526 -- 0 |
+| List M0 |   		          | 967 -- 952 -- 974 -- 993 -- 947 -- 1032 -- 937 -- 1034 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.277	-0.504	967	  56	 100	0	6	 inf	   48.688	   10902.988	   8192.467	  19099.544	 1	7462	0	0	1	0	0
+0.260	0.500	1.000	-1.277	-0.504	967	  56	 100	0	6	 inf	   7.162	   783.460	   8206.264	  8992.538	 0	1024	-16000	1	1	0	0
+

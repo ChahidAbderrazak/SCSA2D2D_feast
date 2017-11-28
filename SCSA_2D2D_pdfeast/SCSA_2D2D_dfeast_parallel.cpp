@@ -69,7 +69,6 @@ OF  THIS  SOFTWARE,  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 const time_t ctt = time(0);
 
 using namespace std;
-#define NUM_THREADS 40
 #define sqr(a_) ((a_)*(a_))
 #define PI 3.141592653589793
 
@@ -142,6 +141,7 @@ struct Feast_param
 	int Scaling_M0;					// M0= Scaling_M0*M0
 	int M_min;                      // Minimum number of eigenvalue in feast search interval
 	int NB_Intervals;               // The number of  search sub-interval
+	int NB_MKL_THREADS;               // The number of  search sub-interval
 
 };
 
@@ -231,7 +231,7 @@ int main(int argc, char* argv[]){
 /************ MPI ***************/
 	MPI_Init(&argc,&argv);
 
-	int scan_all_best=0;                 // 1) scan all the parameters     0) scan only the sensitive parameters
+	int scan_all_best=10;                 // 1) scan all the parameters     0) scan only the sensitive parameters
 
 	if (scan_all_best == 1 ){
 
@@ -269,9 +269,9 @@ int main(int argc, char* argv[]){
 //	Objet_feast.Scaling_M0=0;
 	}else{
 
-	for(Objet_feast.Scaling_M0=0; Objet_feast.Scaling_M0<=4 ; Objet_feast.Scaling_M0++){
-		for(Objet_feast.Nb_cntour_points=56;Objet_feast.Nb_cntour_points<=100;Objet_feast.Nb_cntour_points+=48){
-			for(Objet_feast.cntour_ratio=1;Objet_feast.cntour_ratio<=100;Objet_feast.cntour_ratio+=99){
+	for(Objet_feast.Scaling_M0=1; Objet_feast.Scaling_M0<=1 ; Objet_feast.Scaling_M0++){
+		for(Objet_feast.Nb_cntour_points=8;Objet_feast.Nb_cntour_points<=8;Objet_feast.Nb_cntour_points+=48){
+			for(Objet_feast.cntour_ratio=1;Objet_feast.cntour_ratio<=1;Objet_feast.cntour_ratio+=99){
 //				for(Objet_feast.intgr_Gauss_Trapez_Zolot=0; Objet_feast.intgr_Gauss_Trapez_Zolot<=2 ; Objet_feast.intgr_Gauss_Trapez_Zolot++){
 					for(Objet_feast.eps=6; Objet_feast.eps<=6 ; Objet_feast.eps+=6){
 //						for(Objet_feast.M_min=20; Objet_feast.M_min<=350 ; Objet_feast.M_min+=80){
@@ -302,6 +302,7 @@ int main(int argc, char* argv[]){
 
 	 if(disp_msg_0){cout<<endl<<endl<<"==> The End,  loops ="<< My_counter <<endl;}
 
+//	MPI_Finalize(); /************ MPI ***************/
 	 MPI_Finalize();
 
 return 0;
@@ -597,8 +598,8 @@ int parse_Objet_SCSA( int argc, char** argv, Class_SCSA *Objet_SCSA, Feast_param
 										}else if ( strcmp("-nc", argv[i]) == 0 && i+1 < argc ) {
 											Objet_SCSA->NB_cntour_per_Interval = atof( argv[++i] );
 
-											}else if ( strcmp("-m0", argv[i]) == 0 && i+1 < argc ) {
-												Objet_feast->M_min = atof( argv[++i] );
+											}else if ( strcmp("-MKL_TH", argv[i]) == 0 && i+1 < argc ) {
+												Objet_feast->NB_MKL_THREADS = atof( argv[++i] );
 
 													}else if ( strcmp("--help", argv[i]) == 0 ) {//----- usage
 															USAGE
@@ -1051,11 +1052,11 @@ int Find_nmbr_Eigvalues(Feast_param *Objet_feast, int N, double* &sa,int* &isa,i
 // *************************     Displays    *************************
 	if(disp_msg_4){printf("\t\t--> M estimated is  = %d   . OK!.\n",M);}
 //	if (1.25*M>N){ M0=N; } else{M0=1.25*M;}//+M/2;
-	if (1.05*M>N){ M0=N; } else{M0=1.05*M;}//+M/2;
+//	if (1.0*M>N){ M0=N; } else{M0=1.0*M;}//+M/2;
 
 	if(disp_msg_3){cout<<endl<<"\t\t--> The Estimated  number of eigenvalues in   ["<<Emin <<","<<Emax << "] is M="<<M<<" . The aopted M0="<<M0<<endl<<endl;}
 
-	return M0;
+	return M;
 }
 
 /*====================  EIGENVALUES DECOMPOSITION =============================
@@ -1306,8 +1307,6 @@ template<typename T> bool SCSA_2D2D_pFeast(int argc, char** argv, int show_optim
 		return false;
 	}
 
-	M_min =1.25*M_min;
-
 	if(!Get_the_Sub_Interval(Objet_feast, N2, SC_hhd, iSC_hhd, jSC_hhd, Emin, Emax, M_min,  M0_list, Emin_list, &Nb_M0, &M0)) return false;
 
 //	if (rank==0){  cout<<" Splitting interval is ["<<Emin<<","<<Emax << "] into "<<Nb_M0 << "sub_intervals  with M0=" << M0 << endl;}
@@ -1358,36 +1357,20 @@ template<typename T> bool SCSA_2D2D_pFeast(int argc, char** argv, int show_optim
 	if (Objet_feast->M0>N2){Objet_feast->M0=N2;}
 
 // ########### Run the Parallel Feast  solver on  the interval [Emin_list,Emax_list]  ##########
-//	if (rank==0){Objet_feast->show__feast=1;}else{Objet_feast->show__feast=0;}
-//	if (rank==0){display_time() ;}    // Marking the start point
-
-
-
-//					if(!pFeast_Solver(NEW_COMM_WORLD, Objet_feast, N2, nnz, SC_hhd, iSC_hhd, jSC_hhd, Emin_i, Emax_i, X,  E, res, &M, &nb_iter,&info)) return false;
 	if(!pFeast_Solver( NEW_COMM_WORLD, Objet_feast,  N2,  nnz, SC_hhd, iSC_hhd, jSC_hhd,  X,  E, res, &M, &nb_iter,&info, &Emin_i, &Emax_i )) return false;
-
-//					cout<<endl<<  " IN  [" << Objet_feast->Emin<<","<<Objet_feast->Emax <<"]  Feast has found Nh=" << M << "[" << Emin_i<<","<<Emax_i <<"]  With info code= "<< info<<endl;
 	Mi = M;
-	info_i=info;
+	info_i=info*pow(10, NB_MPI_interval-1-color);
+//	cout<<endl<< " info_"<<color << "="<<info_i<< " from info="<<info<<endl;
 	nb_iter_i=nb_iter;
 
-///////########################################################################
-
+//########################################################################
 	time_eig= gettime() - comp_time0;
-//	cout<< endl<<"the Emin "<<rank << endl;;
-//	Disp_matrx(1,10,E," ");
-
-
-//				if ( show_optimal==1)cout<<std::scientific<< *(E+M-1)<< "\t"<< *(E)<< "\t";
-
 
 // ############## Reconstruct the image  ####################
 	comp_time0 = gettime();
 	if ( !SCSA_2D2D_Reconstruction( h, N2, M, gm, fe, Input_Image, Ref_Image, max_img, X, E, Vi , &time_Psinnor, &MSE0_i, &PSNR0, &MSE_i, &PSNR)) return -1;
 	time_reconst=gettime() - comp_time0;
-
 	comp_end=data_prep+time_eig+time_reconst+time_Split;
-
 
 // *********  Reduce all of the local sums into the global sum  *****
 	MPI_Reduce(&Mi, &sum_M, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
@@ -1412,32 +1395,29 @@ template<typename T> bool SCSA_2D2D_pFeast(int argc, char** argv, int show_optim
 			// Compute the Performance using PSNR metric
 			PSNR0=evaluate_results(  N2, Ref_Image, Input_Image);
 			PSNR=evaluate_results(  N2, Ref_Image, Output_Image);
-
-
 			comp_time0 = gettime();
 
 	// ############## Add row to the performance table display ####################
 			if (show_optimal==1 && My_counter ==0){
 					display_sub_intervals( N, numprocs, M0_list, Emin_list );
-					cout<< "Parallel Feast Double"<<endl<<endl<<"h \t gm \t fe \t Emin \t Emax \t M0 \t #cnt \t ratio \t Meth \t eps \t PSNR0  \t PSNR \t eig(s) \t Split(s) \t Total(s) \t #iter \t Nh % \t info";
-//					cout<<endl<<endl<<"  h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	#cnt  ratio   Method   eps 	PSNR0  	    PSNR	eig time(s) 	Split time (s) 	 Total(s)        #iter 	Nh %  info"<<endl;
-					cout<<"\t store_fact \t cnvgce_trace_Resdl \t guess_M0 % \t  Run_Q_M0";
+					cout<< "Parallel Feast Double"<<endl<<endl<<"#Intervals \t #MKL_Threads \t M0 \t #cnt \t eps \t guess_M0 % \t cnvgce_trace_Resdl \t store_fact \t IntegrationType \t EllipseRatio \t  Run_Q_M0 \t PSNR \t eig(s)  \t #iter \t Nh % \t info \t h \t gm \t fe \t Emin \t Emax  \t Split(s) \t Total(s)\t  PSNR0";
+					cout<< endl<<"#Intervals \t #MKL_Threads \t M0 \t fpm(2) \t fpm(3) \t fpm(5) \t fpm(6) \t fpm(10) \t fpm(16) \t fpm(18) \t  fpm(14) \t PSNR \t eig(s)  \t #iter \t Nh % \t info \t h \t gm \t fe \t Emin \t Emax  \t Split(s) \t Total(s)\t  PSNR0";
 					cout<<endl;
-//					cout<<"\t Scaling_M0 \t  max_refin_loop \t guess_M0 % \t cnvgce_trace_Resdl \t Run_Q_M0"<<endl;
 			}
-
-
-			cout<<std::fixed<<setprecision(3) << h<< "\t"<< gm<< "\t"<< fe <<"\t"<<  Objet_feast->Emin << "\t"<< Objet_feast->Emax << "\t"<< Objet_feast->M0 << "\t  "<< Objet_feast->Nb_cntour_points<< "\t "<< Objet_feast->cntour_ratio <<  "\t"<< Objet_feast->intgr_Gauss_Trapez_Zolot << "\t"<<Objet_feast->eps  ;
-			cout<< "\t "<< PSNR0<< "\t   "<< PSNR<<  "\t   "<<time_eig<< "\t   "<<time_Split << "\t  "<< comp_end<<"\t "<<sum_iter/numprocs<<"\t"<<sum_M<<"\t"<< sum_info;
-			cout<<std::fixed<<"\t"<< Objet_feast->store_fact << "\t"<< Objet_feast->cnvgce_trace_Resdl << "\t"<< Objet_feast->guess_M0 << "\t" <<Objet_feast->Run_Q_M0 ;
+			cout<<std::fixed<<Objet_feast->NB_Intervals<< "\t"<< Objet_feast->NB_MKL_THREADS<<"\t";
+			cout<<std::fixed<< Objet_feast->M0 << "\t  "<< Objet_feast->Nb_cntour_points<< "\t"<<Objet_feast->eps<< "\t"<< Objet_feast->guess_M0 << "\t"<< Objet_feast->cnvgce_trace_Resdl<<"\t" ;
+			cout<<std::fixed<<Objet_feast->store_fact  <<  "\t"<< Objet_feast->intgr_Gauss_Trapez_Zolot << "\t "<< Objet_feast->cntour_ratio << "\t" <<Objet_feast->Run_Q_M0 << "\t "  ;
+			cout<<std::fixed<<setprecision(3)<< PSNR<<  "\t   "<<time_eig<<"\t "<<std::fixed<<sum_iter/numprocs<<"\t"<<sum_M<<"\t"<< sum_info<< "\t ";
+			cout<<std::fixed<<setprecision(3) << h<< "\t"<< gm<<std::fixed<< "\t"<< fe <<std::fixed<<setprecision(3) << "\t"<<  Objet_feast->Emin << "\t"<< Objet_feast->Emax<< "\t   "<<time_Split << "\t  "<< comp_end<< "\t "<< PSNR0;
 			cout<<endl;
+
+
 		if (sum_info==0){
 		// ############################ Save output image  ############################
 		string name_output;
 		name_output=Name_SCSA(N, h, gm, fe , Emin,Objet_feast->eps ,MKL_Feast,PSNR,numprocs );
 		if(!writeBuffer(Objet_SCSA,N2,Output_Image, name_output)) return -1;
 		}
-
 	}
 
 	if (Objet_feast->M0==N2){
@@ -1448,8 +1428,6 @@ template<typename T> bool SCSA_2D2D_pFeast(int argc, char** argv, int show_optim
 	*M_p=sum_M;
 	*PSNR_p=PSNR;
 	*Emin0_p=Emin0;
-
-//	MPI_Finalize(); /************ MPI ***************/
 
 	return true;
 
@@ -2046,20 +2024,17 @@ template<typename T> bool pFeast_Solver(MPI_Comm NEW_COMM_WORLD, Feast_param *Ob
 
 	if(disp_msg_2){cout<<"\t\t-->  The  SC_hhD matrix has been decomposed succesfully with Nh="<<*M<< ", info="<<info<<  endl;}
 
-
 	gettimeofday(&tt2,NULL);
 //	printf("Sum SIMULATION TIME %f\n",(tt2.tv_sec-tt1.tv_sec)*1.0+(tt2.tv_usec-tt1.tv_usec)*0.000001);
 
-	if (info!=0) {
-//		cout<<endl<< " Solver Error !! info code="<< info<<endl;
-
-		if (info<0) {
-
-			info=1000*info;                 // Because we sum the info flag, we need to avoid 0 coming from 2 errors one positive and another negative
-		}
-
+	if (info>=200){
+		info=info-200+7;
+	}else if(info>6){
+		info=5;
 	}
-
+	if (info<=-100){
+		info=-4;
+	}
 
 	*Iter_p =loop;
 	*info_p=info;

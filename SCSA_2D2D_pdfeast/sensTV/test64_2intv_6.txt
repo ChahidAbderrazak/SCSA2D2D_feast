@@ -1,2 +1,0 @@
-APPLICATION TERMINATED WITH THE EXIT STRING: Floating point exception (signal 8)
-APPLICATION TERMINATED WITH THE EXIT STRING: Floating point exception (signal 8)

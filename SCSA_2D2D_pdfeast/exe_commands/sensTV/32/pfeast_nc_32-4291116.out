@@ -1,0 +1,5 @@
+ Scan The fastest combinaison 32
+
+ MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+
+

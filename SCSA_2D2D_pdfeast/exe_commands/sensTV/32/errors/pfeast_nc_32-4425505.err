@@ -1,0 +1,8 @@
+srun: error: nid00155: task 0: Exited with exit code 255
+srun: Terminating job step 4425505.0
+slurmstepd: error: *** JOB 4425505 ON nid00155 CANCELLED AT 2017-11-18T17:07:21 ***
+srun: got SIGCONT
+srun: forcing job termination
+slurmstepd: error: *** STEP 4425505.3 ON nid00155 CANCELLED AT 2017-11-18T17:07:21 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: got SIGCONT

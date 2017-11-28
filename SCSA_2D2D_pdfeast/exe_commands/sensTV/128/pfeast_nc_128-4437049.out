@@ -1,0 +1,34 @@
+
+ MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+
+
+Warrning : M0_Total = 7831  Please change your input attributs  such that : 5 < n <  78 with  1500 > m0 > 100
+
+
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=pfeast_nc128
+#SBATCH --output=./sensTV/128/pfeast_nc_128-%j.out
+#SBATCH --error=./sensTV/128/errors/pfeast_nc_128-%j.err
+#SBATCH --nodes=8
+#SBATCH --time=23:59:00
+
+export MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+echo""
+echo " MKL_NUM_THREADS=32 OMP_NUM_THREADS=32"
+echo""
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=256 --ntasks-per-node=32 --ntasks-per-socket=16   ./SCSA_2D2D_dfeast_parallel   -nc 16  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+
+echo""
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_128.sh
+echo""
+
+

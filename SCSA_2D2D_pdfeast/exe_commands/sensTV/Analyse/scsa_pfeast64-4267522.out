@@ -1,0 +1,56 @@
+
+Warrning : M0_Total = 2677  Please change your input attributs  such that : 2 < n <  10 with  1000 > m0 > 250
+
+ Splitting interval is [-1.08718,0] into 4sub_intervals  with M0=2677
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 4
+
+| Search Intervals 	|-1.08718 -- -0.454407 -- -0.284535 -- -0.137822 -- 0|
+| List M0  		|660 -- 667 -- 675 -- 676|
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 M0 	 Emin 	 Emax 	 Nb_cntour_points 	 PSNR0 	 PSNR 	 time_eig 	 time_Split 	 Totale time 	 nb_iter  	 Nh % 	 info
+0.260000	0.500000	1.000000	660	-1.087179	-0.454407	8	inf	50.614643	152.836117	89.195346	242.294678	5	2560	0
+ Splitting interval is [-1.08718,0] into 8sub_intervals  with M0=2677
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 8
+
+| Search Intervals 	|-1.08718 -- -0.55633 -- -0.454407 -- -0.365656 -- -0.284535 -- -0.208955 -- -0.137822 -- -0.0689109 -- 0|
+| List M0  		|337 -- 325 -- 334 -- 332 -- 331 -- 344 -- 339 -- 338|
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 M0 	 Emin 	 Emax 	 Nb_cntour_points 	 PSNR0 	 PSNR 	 time_eig 	 time_Split 	 Totale time 	 nb_iter  	 Nh % 	 info
+0.260000	0.500000	1.000000	337	-1.087179	-0.556330	8	inf	50.614647	175.854047	228.635551	404.743716	7	2560	0
+
+Warrning : M0_Total = 2677  Please change your input attributs  such that : 2 < n <  10 with  1000 > m0 > 250
+
+
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=scsa_pfeast64
+#SBATCH --output=./sensTV/scsa_pfeast64-%j.out
+#SBATCH --error=./sensTV/errors/scsa_pfeast64-%j.err
+#SBATCH --nodes=1
+#SBATCH --time=00:30:00
+
+export MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+
+srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=4 --ntasks-per-node=4  --ntasks-per-socket=2  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=8 --ntasks-per-node=8  --ntasks-per-socket=4  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=16 --ntasks-per-node=16  --ntasks-per-socket=8  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+
+echo""
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_64.sh

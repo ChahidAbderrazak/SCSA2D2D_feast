@@ -1,0 +1,2 @@
+srun: error: nid00031: tasks 0-15: Exited with exit code 255
+srun: Terminating job step 4304726.0

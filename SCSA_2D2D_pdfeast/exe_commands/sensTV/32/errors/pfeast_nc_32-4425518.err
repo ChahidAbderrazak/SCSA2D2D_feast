@@ -1,0 +1,4 @@
+srun: error: nid00032: task 0: Exited with exit code 255
+srun: Terminating job step 4425518.0
+srun: error: nid00032: task 0: Exited with exit code 255
+srun: Terminating job step 4425518.3

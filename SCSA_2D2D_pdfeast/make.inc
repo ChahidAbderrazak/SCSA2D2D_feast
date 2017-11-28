@@ -6,7 +6,7 @@
 ########## Select C compiler and flags (needed for C and/or MPI-C examples)
 #############################################################################
 ### Default
-CC     = icc     ##### FEAST library compiled with option 2 (noruntime dependency)
+CC     = cc     ##### FEAST library compiled with option 2 (noruntime dependency)
 CFLAGS = -O3
 
 ### other possibilities (examples)
@@ -30,13 +30,13 @@ FORT  =  ftn#gfortan #-lifcoremt
 
 ####### Default (If FEAST-MPI compiled with MPICH2)
 #PCC  =  mpicc.mpich2 -cc=$(CC)
-#PCC  =  CC
+PCC  =  CC
 PCFLAGS = $(CFLAGS)
 
 
 ####### other possibilities (examples)
 ### If FEAST-MPI compiled with Intel-MPI
-PCC  =  mpiicc -cc=$(CC)
+#PCC  =  mpiicc -cc=$(CC)
 ## If FEAST-MPI compiled with OpenMPI...requires shell environment variable "OMPI_CC=$(CC)"
 #export OMPI_CC=$(CC) # for BASH shell
 #PCC  =  mpicc.openmpi
@@ -68,7 +68,7 @@ PFFLAGS = $(FFLAGS)
 #==============================================
 # Specify PATH to FEAST (main directory)- path can be defined as shell variable
 #==============================================
-FEASTROOT=$(HOME)/FEAST/3.0
+FEASTROOT=/project/k1251/codes/FEAST/3.0
 
 LOCLIBS = -L$(FEASTROOT)/lib/x86_64
 

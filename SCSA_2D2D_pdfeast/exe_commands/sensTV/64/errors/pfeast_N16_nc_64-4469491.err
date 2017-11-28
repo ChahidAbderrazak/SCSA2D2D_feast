@@ -1,0 +1,25 @@
+srun: error: nid03309: task 9: Segmentation fault
+srun: Terminating job step 4469491.0
+slurmstepd: error: *** STEP 4469491.0 ON nid03300 CANCELLED AT 2017-11-27T14:39:03 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid03300: task 0: Killed
+srun: error: nid03308: task 8: Killed
+srun: error: nid03315: task 15: Killed
+srun: error: nid03305: task 5: Killed
+srun: error: nid03314: task 14: Killed
+srun: error: nid03311: task 11: Killed
+srun: error: nid03310: task 10: Killed
+srun: error: nid03312: task 12: Killed
+srun: error: nid03303: task 3: Killed
+srun: error: nid03307: task 7: Killed
+srun: error: nid03302: task 2: Killed
+srun: error: nid03301: task 1: Killed
+srun: error: nid03304: task 4: Killed
+srun: error: nid03313: task 13: Killed
+srun: error: nid03306: task 6: Killed
+slurmstepd: error: *** STEP 4469491.1 ON nid03300 CANCELLED AT 2017-11-28T14:35:52 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 4469491 ON nid03300 CANCELLED AT 2017-11-28T14:35:52 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: got SIGCONT
+srun: got SIGCONT
+srun: forcing job termination

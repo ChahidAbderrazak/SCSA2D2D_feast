@@ -1,0 +1,26 @@
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+srun: error: nid00032: task 0: Exited with exit code 2
+srun: Terminating job step 4425499.0
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+srun: error: nid00032: tasks 0-1: Exited with exit code 2
+srun: Terminating job step 4425499.1
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+srun: error: nid00032: tasks 0-3: Exited with exit code 2
+srun: Terminating job step 4425499.2
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+srun: error: nid00032: task 0: Exited with exit code 2
+srun: Terminating job step 4425499.3
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+srun: error: nid00032: tasks 0-1: Exited with exit code 2
+srun: Terminating job step 4425499.4
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+srun: error: nid00032: tasks 0-3: Exited with exit code 2
+srun: Terminating job step 4425499.5

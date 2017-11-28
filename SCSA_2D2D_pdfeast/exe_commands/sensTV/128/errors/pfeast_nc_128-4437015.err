@@ -1,0 +1,8 @@
+srun: error: nid03498: tasks 0-4,6-31: Exited with exit code 255
+srun: Terminating job step 4437015.0
+slurmstepd: error: *** STEP 4437015.0 ON nid03498 CANCELLED AT 2017-11-20T10:22:42 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid03501: tasks 96-127: Exited with exit code 255
+srun: error: nid03498: task 5: Exited with exit code 255
+srun: error: nid03499: tasks 32-63: Exited with exit code 255
+srun: error: nid03500: tasks 64-95: Exited with exit code 255

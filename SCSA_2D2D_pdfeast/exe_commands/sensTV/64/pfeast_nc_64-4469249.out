@@ -1,0 +1,100 @@
+
+ MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 4
+
+| Sub-Intervals| 		| -1.09 -- -0.454 -- -0.285 -- -0.138 -- 0 |
+| List M0 |   		          | 629 -- 636 -- 643 -- 644 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.087	-0.454	629	  8	 1	0	6	 inf	   41.968	   389.893	   187.631	  578.013	 14	2540	7	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	754	  8	 1	0	6	 inf	   50.615	   55.880	   185.968	  242.110	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	880	  8	 1	0	6	 inf	   50.615	   64.640	   184.044	  248.926	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1006	  8	 1	0	6	 inf	   50.615	   72.356	   184.996	  257.626	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1132	  8	 1	0	6	 inf	   50.615	   80.931	   184.824	  265.963	 1	2560	0	1	1	0	0
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 8
+
+| Sub-Intervals| 		| -1.09 -- -0.556 -- -0.454 -- -0.366 -- -0.285 -- -0.209 -- -0.138 -- -0.0689 -- 0 |
+| List M0 |   		          | 321 -- 310 -- 319 -- 317 -- 316 -- 328 -- 323 -- 322 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.087	-0.556	321	  8	 1	0	6	 inf	   42.386	   293.616	   457.445	  751.302	 13	2522	10	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	385	  8	 1	0	6	 inf	   50.615	   61.047	   463.573	  524.849	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	449	  8	 1	0	6	 inf	   50.615	   66.915	   466.252	  533.393	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	513	  8	 1	0	6	 inf	   50.615	   73.375	   468.572	  542.169	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	577	  8	 1	0	6	 inf	   50.615	   77.664	   472.460	  550.326	 1	2560	0	1	1	0	0
+
+ MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 4
+
+| Sub-Intervals| 		| -1.09 -- -0.454 -- -0.285 -- -0.138 -- 0 |
+| List M0 |   		          | 629 -- 636 -- 643 -- 644 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.087	-0.454	629	  8	 1	0	6	 inf	   41.968	   383.277	   90.316	  473.819	 14	2540	7	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	754	  8	 1	0	6	 inf	   50.615	   48.426	   89.889	  138.605	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	880	  8	 1	0	6	 inf	   50.615	   56.628	   89.824	  146.661	 1	2560	0	1	1	0	0
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 8
+
+| Sub-Intervals| 		| -1.09 -- -0.556 -- -0.454 -- -0.366 -- -0.285 -- -0.209 -- -0.138 -- -0.0689 -- 0 |
+| List M0 |   		          | 321 -- 310 -- 319 -- 317 -- 316 -- 328 -- 323 -- 322 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.087	-0.556	321	  8	 1	0	6	 inf	   42.386	   250.113	   227.029	  477.367	 13	2522	10	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	385	  8	 1	0	6	 inf	   50.615	   42.011	   223.918	  266.172	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	449	  8	 1	0	6	 inf	   50.615	   47.216	   222.550	  269.998	 1	2560	0	1	1	0	0
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=16pfeast_nc64
+#SBATCH --output=./sensTV/64/pfeast_N16_nc_64-%j.out
+#SBATCH --error=./sensTV/64/errors/pfeast_N16_nc_64-%j.err
+#SBATCH --nodes=16
+#SBATCH --time=23:59:00
+
+export MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+echo""
+echo " MKL_NUM_THREADS=32 OMP_NUM_THREADS=32"
+echo""
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=16 --ntasks-per-node=1   ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+
+export MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+echo""
+echo " MKL_NUM_THREADS=16 OMP_NUM_THREADS=16"
+echo""
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=16 --ntasks-per-node=16   ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+
+
+
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_64.sh
+echo""

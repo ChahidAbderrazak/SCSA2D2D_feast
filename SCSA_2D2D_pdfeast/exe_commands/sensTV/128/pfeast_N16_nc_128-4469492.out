@@ -1,0 +1,30 @@
+
+ MKL_NUM_THREADS=64 OMP_NUM_THREADS=64
+
+
+
+Feast 3.0:  image size = 128 X 128  ,   # Sub-Intervals= 16
+
+| Sub-Intervals| 		| -1.28 -- -0.584 -- -0.504 -- -0.437 -- -0.384 -- -0.333 -- -0.285 -- -0.245 -- -0.205 -- -0.176 -- -0.15 -- -0.127 -- -0.0991 -- -0.0774 -- -0.0526 -- -0.0296 -- 0 |
+| List M0 |   		          | 460 -- 459 -- 480 -- 426 -- 444 -- 486 -- 425 -- 522 -- 448 -- 454 -- 457 -- 527 -- 413 -- 479 -- 438 -- 548 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.277	-0.584	460	  8	 1	0	6	 inf	   45.092	   2685.024	   2457.216	  5144.888	 13	7395	22	1	1	0	0
+
+ MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+
+
+
+Feast 3.0:  image size = 128 X 128  ,   # Sub-Intervals= 16
+
+| Sub-Intervals| 		| -1.28 -- -0.584 -- -0.504 -- -0.437 -- -0.384 -- -0.333 -- -0.285 -- -0.245 -- -0.205 -- -0.176 -- -0.15 -- -0.127 -- -0.0991 -- -0.0774 -- -0.0526 -- -0.0296 -- 0 |
+| List M0 |   		          | 460 -- 459 -- 480 -- 426 -- 444 -- 486 -- 425 -- 522 -- 448 -- 454 -- 457 -- 527 -- 413 -- 479 -- 438 -- 548 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.277	-0.584	460	  8	 1	0	6	 inf	   45.092	   2878.168	   2507.191	  5387.989	 13	7395	22	1	1	0	0

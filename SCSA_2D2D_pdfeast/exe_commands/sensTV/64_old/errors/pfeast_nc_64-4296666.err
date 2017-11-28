@@ -1,0 +1,5 @@
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: *** STEP 4296666.0 ON nid00073 CANCELLED AT 2017-10-12T17:05:28 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 4296666 ON nid00073 CANCELLED AT 2017-10-12T17:05:28 DUE TO TIME LIMIT ***
+srun: got SIGCONT
+srun: forcing job termination

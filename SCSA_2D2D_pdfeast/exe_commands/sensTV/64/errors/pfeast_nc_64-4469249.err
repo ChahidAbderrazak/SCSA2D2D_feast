@@ -1,0 +1,11 @@
+srun: error: nid03350: tasks 0-1: Segmentation fault
+srun: Terminating job step 4469249.2
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: *** STEP 4469249.2 ON nid03350 CANCELLED AT 2017-11-27T15:02:22 ***
+srun: error: nid03350: tasks 3-15: Killed
+srun: error: nid03350: task 2: Killed
+srun: error: nid03350: task 0: Segmentation fault
+srun: Terminating job step 4469249.5
+slurmstepd: error: *** STEP 4469249.5 ON nid03350 CANCELLED AT 2017-11-27T15:42:35 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid03350: tasks 1-15: Killed

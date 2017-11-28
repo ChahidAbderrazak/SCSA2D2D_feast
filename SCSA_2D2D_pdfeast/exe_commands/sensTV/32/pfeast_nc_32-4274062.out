@@ -1,0 +1,61 @@
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 1
+
+| Sub-Intervals| 		| -1.08 -- 0 |
+| List M0 |   		          | 597 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info
+0.260	0.500	1.000	-1.082	0.000	597	  8	 100	0	12	 inf	   47.917	   18.402	   0.927	  19.387	 9	571	0
+0.260	0.500	1.000	-1.082	0.000	716	  8	 100	0	12	 inf	   47.917	   10.266	   0.657	  10.953	 4	571	0
+0.260	0.500	1.000	-1.082	0.000	835	  8	 100	0	12	 inf	   47.917	   9.426	   0.653	  10.112	 3	571	0
+0.260	0.500	1.000	-1.082	0.000	955	  8	 100	0	12	 inf	   47.917	   7.963	   0.670	  8.679	 2	571	0
+0.260	0.500	1.000	-1.082	0.000	1024	  8	 100	0	12	 inf	   47.917	   5.820	   0.653	  6.507	 1	571	0
+
+
+Warnning(3) :The estimated Number  of eigevalues is greater than N= 1024
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 2
+
+| Sub-Intervals| 		| -1.08 -- -0.258 -- 0 |
+| List M0 |   		          | 298 -- 299 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info
+0.260	0.500	1.000	-1.082	-0.258	298	  8	 100	0	12	 inf	   47.917	   10.477	   4.038	  14.551	 12	571	0
+0.260	0.500	1.000	-1.082	-0.258	357	  8	 100	0	12	 inf	   47.917	   6.406	   3.663	  10.088	 4	571	0
+0.260	0.500	1.000	-1.082	-0.258	417	  8	 100	0	12	 inf	   47.917	   4.513	   3.679	  8.218	 3	571	0
+0.260	0.500	1.000	-1.082	-0.258	476	  8	 100	0	12	 inf	   47.917	   5.647	   3.671	  9.347	 3	571	0
+0.260	0.500	1.000	-1.082	-0.258	536	  8	 100	0	12	 inf	   47.917	   6.538	   3.671	  10.235	 2	571	0
+
+Warrning : M0_Total = 597  Please change your input attributs  such that : 0 < n <  2 with  1000 > m0 > 250
+
+
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=pfeast_nc32
+#SBATCH --output=./sensTV/32/pfeast_nc_32-%j.out
+#SBATCH --error=./sensTV/32/errors/pfeast_nc_32-%j.err
+#SBATCH --nodes=1
+#SBATCH --time=01:59:00
+
+export MKL_NUM_THREADS=36 OMP_NUM_THREADS=36
+
+srun --ntasks=1 --ntasks-per-node=1   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+srun --ntasks=2 --ntasks-per-node=2 --ntasks-per-socket=1   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+srun --ntasks=4 --ntasks-per-node=4 --ntasks-per-socket=2   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+
+echo""
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_32.sh

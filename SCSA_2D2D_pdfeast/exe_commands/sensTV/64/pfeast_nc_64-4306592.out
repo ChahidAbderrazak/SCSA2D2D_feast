@@ -1,0 +1,43 @@
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=pfeast_nc64
+#SBATCH --output=./sensTV/64/pfeast_nc_64-%j.out
+#SBATCH --error=./sensTV/64/errors/pfeast_nc_64-%j.err
+#SBATCH --nodes=1
+#SBATCH --time=23:59:00
+
+
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_64.sh
+echo""
+
+export MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+ 
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=4 --ntasks-per-node=4  --ntasks-per-socket=2  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+#srun --ntasks=8 --ntasks-per-node=8  --ntasks-per-socket=4  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+#srun --ntasks=16 --ntasks-per-node=16  --ntasks-per-socket=8  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+
+echo""
+
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 4
+
+| Sub-Intervals| 		| -1.09 -- -0.454 -- -0.285 -- -0.138 -- 0 |
+| List M0 |   		          | 660 -- 667 -- 675 -- 676 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.087	-0.454	1056	  56	 100	0	6	 inf	   50.615	   275.511	   185.921	  461.818	 1	2560	0	0	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1056	  56	 100	0	6	 inf	   50.615	   195.775	   185.188	  381.156	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1188	  56	 100	0	6	 inf	   50.615	   280.086	   186.377	  466.676	 1	2560	0	0	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1188	  56	 100	0	6	 inf	   50.615	   206.047	   185.638	  391.884	 1	2560	0	1	1	0	0
+

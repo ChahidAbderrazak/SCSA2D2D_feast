@@ -1,0 +1,77 @@
+ Scan The fastest combinaison 32
+
+ MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+
+
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 1
+
+| Sub-Intervals| 		| -1.08 -- 0 |
+| List M0 |   		          | 597 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.082	0.000	358	  56	 100	0	6	 inf	   17.243	   7.887	   0.886	  8.833	 2	358	3	0	1	0	0
+0.260	0.500	1.000	-1.082	0.000	358	  56	 100	0	6	 inf	   17.243	   5.455	   0.642	  6.109	 2	358	3	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	597	  56	 100	0	6	 inf	   47.917	   7.795	   0.640	  8.453	 1	571	0	0	1	0	0
+0.260	0.500	1.000	-1.082	0.000	597	  56	 100	0	6	 inf	   47.917	   5.950	   0.630	  6.601	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	835	  56	 100	0	6	 inf	   47.917	   7.790	   0.627	  8.438	 1	571	0	0	1	0	0
+0.260	0.500	1.000	-1.082	0.000	835	  56	 100	0	6	 inf	   47.917	   6.520	   0.669	  7.211	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	1024	  56	 100	0	6	 inf	   47.917	   7.906	   0.663	  8.590	 1	571	0	0	1	0	0
+
+
+Warnning(3) :The estimated Number  of eigevalues is greater than N= 1024
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 2
+
+| Sub-Intervals| 		| -1.08 -- -0.258 -- 0 |
+| List M0 |   		          | 298 -- 299 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.082	-0.258	178	  56	 100	0	6	 inf	   17.162	   8.001	   5.412	  13.527	 2	357	6	0	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	178	  56	 100	0	6	 inf	   17.162	   3.605	   3.686	  7.312	 2	357	6	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	298	  56	 100	0	6	 inf	   47.917	   5.902	   3.682	  9.606	 1	571	0	0	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	298	  56	 100	0	6	 inf	   47.917	   4.097	   3.673	  7.784	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	417	  56	 100	0	6	 inf	   47.917	   5.998	   3.684	  9.697	 1	571	0	0	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	417	  56	 100	0	6	 inf	   47.917	   4.213	   3.634	  7.869	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	536	  56	 100	0	6	 inf	   47.917	   6.298	   3.630	  9.942	 0	571	0	0	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	536	  56	 100	0	6	 inf	   47.917	   4.508	   3.609	  8.138	 1	571	0	1	1	0	0
+
+Warrning : M0_Total = 597  Please change your input attributs  such that : 0 < n <  2 with  1500 > m0 > 250
+
+
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=pfeast_nc32
+#SBATCH --output=./sensTV/32/pfeast_nc_32-%j.out
+#SBATCH --error=./sensTV/32/errors/pfeast_nc_32-%j.err
+#SBATCH --nodes=1
+#SBATCH --time=23:59:00
+
+
+export MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+echo " Scan The fastest combinaison 32"
+echo""
+echo " MKL_NUM_THREADS=32 OMP_NUM_THREADS=32"
+echo""
+echo""
+
+srun --ntasks=1 --ntasks-per-node=1   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+srun --ntasks=2 --ntasks-per-node=2 --ntasks-per-socket=1   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+srun --ntasks=4 --ntasks-per-node=4 --ntasks-per-socket=2   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+
+echo""
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_32.sh

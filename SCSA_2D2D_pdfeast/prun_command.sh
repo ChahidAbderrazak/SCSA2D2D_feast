@@ -1,5 +1,0 @@
-echo " Please make sure that the script is compiled using : make clean && make all "
-#sbatch run_32.sh && echo " Run SCSA for 32X32 image"
-#sbatch run_64.sh && echo " Run SCSA for 64X64 image"
-sbatch run_128.sh && echo " Run SCSA for 128X128 image"
-squeue -u chahida &&  echo "  Check situation , please:  squeue -u chahida"

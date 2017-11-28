@@ -1,0 +1,17 @@
+srun: error: nid00495: tasks 2,4-5,7: Killed
+srun: Terminating job step 4299300.0
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: *** STEP 4299300.0 ON nid00495 CANCELLED AT 2017-10-12T18:12:18 ***
+srun: error: nid00495: task 0: Killed
+srun: error: nid00495: tasks 1,6: Killed
+srun: error: nid00495: task 3: Killed
+srun: error: nid00495: tasks 0-1: Segmentation fault
+srun: Terminating job step 4299300.1
+slurmstepd: error: *** STEP 4299300.1 ON nid00495 CANCELLED AT 2017-10-12T21:28:00 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid00495: tasks 2-15: Killed
+srun: error: nid00495: tasks 8-31: Exited with exit code 255
+srun: Terminating job step 4299300.2
+slurmstepd: error: *** STEP 4299300.2 ON nid00495 CANCELLED AT 2017-10-12T21:29:00 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid00495: tasks 0-7: Exited with exit code 255

@@ -1,0 +1,14 @@
+srun: error: nid00074: tasks 0-1: Segmentation fault
+srun: Terminating job step 4294690.0
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: *** STEP 4294690.0 ON nid00074 CANCELLED AT 2017-10-10T23:34:02 ***
+srun: error: nid00074: tasks 2-15: Killed
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 1. Ignoring --ntasks-per-node.
+srun: error: nid00074: tasks 8-31: Exited with exit code 255
+srun: Terminating job step 4294690.1
+slurmstepd: error: *** STEP 4294690.1 ON nid00074 CANCELLED AT 2017-10-10T23:35:03 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid00074: tasks 0-7: Exited with exit code 255
+srun: Warning: can't honor --ntasks-per-node set to 32 which doesn't match the requested tasks 64 with the number of requested nodes 1. Ignoring --ntasks-per-node.
+srun: error: nid00074: tasks 0-63: Exited with exit code 255
+srun: Terminating job step 4294690.2

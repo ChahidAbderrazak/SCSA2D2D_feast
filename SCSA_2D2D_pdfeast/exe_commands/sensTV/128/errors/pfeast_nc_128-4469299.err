@@ -1,0 +1,179 @@
+*** glibc detected *** /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: malloc(): memory corruption: 0x00000000089f3590 ***
+======= Backtrace: =========
+[0x4d7b464]
+[0x4d7e2d5]
+[0x4d8035f]
+[0x4aeeb3c]
+[0x4aef776]
+[0x4070b6]
+[0x4017d8]
+[0x4d476e1]
+[0x400fd1]
+======= Memory map: ========
+00400000-05232000 r-xp 00000000 54c:efa30 144145435903210202             /lustre/project/k1251/Workspace/Script_in_Process/SCSA_2D2D_dfeast_parallel
+05432000-0553d000 rwxp 04e32000 54c:efa30 144145435903210202             /lustre/project/k1251/Workspace/Script_in_Process/SCSA_2D2D_dfeast_parallel
+0553d000-3c8b8000 rwxp 00000000 00:00 0                                  [heap]
+2aaaaaaab000-2aaaaaaac000 r-xp 00000000 00:00 0                          [vdso]
+2aaaaaaac000-2aaaaaac4000 rwxs 00000000 00:04 202284                     /dev/zero (deleted)
+2aaaaaac4000-2aaaaaec5000 rwxp 00000000 00:00 0 
+2aaaaaec5000-2aaaaaec6000 rwxs 00000000 00:00 0 
+2aaaaaec6000-2aaaaaec8000 rwxs 00000000 00:00 0 
+2aaaaaec8000-2aaaaaec9000 r-xs 00000000 00:00 0 
+2aaaaaec9000-2aaaaaecb000 rwxs 00000000 00:00 0 
+2aaaaaecb000-2aaaaaecc000 r-xs 00000000 00:00 0 
+2aaaaaecc000-2aaaaaecf000 rwxp 00000000 00:00 0 
+2aaaaaecf000-2aaaaaed3000 rwxp 00000000 00:00 0 
+2aaaaaed3000-2aaaaaed4000 rwxs 00000000 00:00 0 
+2aaaaaed4000-2aaaaaed5000 r-xs 00000000 00:00 0 
+2aaaaaed5000-2aaaaaed6000 r-xs fe681c000 00:04 202289                    /dev/zero (deleted)
+2aaaaaed6000-2aaaaaf89000 rwxp 00000000 00:00 0 
+2aaaaaf89000-2aaaaaf8a000 ---p 00000000 00:00 0 
+2aaaaaf8a000-2aaaab1db000 rwxp 00000000 00:00 0 
+2aaaab1db000-2aaaab1dc000 rwxs 00000000 00:00 0 
+2aaaab1dc000-2aaaab1ed000 rwxp 00000000 00:00 0 
+2aaaab1ed000-2aaaab1ee000 rwxs 00000000 00:00 0 
+2aaaab200000-2aaaab600000 rwxs 00000000 00:1c 202290                     /var/lib/hugetlbfs/global/pagesize-2097152/hugepagefile.MPICH.0.58385.kvs_4469299 (deleted)
+2aaaab600000-2aaaab832000 rwxp 00000000 00:00 0 
+2aaaab832000-2aaaab833000 rwxs 00000000 00:00 0 
+2aaaab833000-2aaaab944000 rwxp 00000000 00:00 0 
+2aaaab944000-2aaaab94c000 rwxs 00000000 00:00 0 
+2aaaab94c000-2aaaab954000 rwxs 00000000 00:00 0 
+2aaaab954000-2aaaab955000 rwxs 00000000 00:00 0 
+2aaaab955000-2aaaab984000 rwxp 00000000 00:00 0 
+2aaaaba00000-2aaaabe00000 rwxs 00000000 00:1c 202291                     /var/lib/hugetlbfs/global/pagesize-2097152/hugepagefile.MPICH.1.58385.kvs_4469299 (deleted)
+2aaaabe00000-2aaab0140000 rwxp 00000000 00:00 0 
+2aaab47a8000-2aaab49c8000 rwxp 00000000 00:00 0 
+2aaab62b0000-2aaab62b1000 ---p 00000000 00:00 0 
+2aaab62b1000-2aaab62c1000 rwxp 00000000 00:00 0 
+2aaab62c1000-2aaab62c2000 ---p 00000000 00:00 0 
+2aaab62c2000-2aaab66c2000 rwxp 00000000 00:00 0 
+2aaab66c2000-2aaab66c3000 ---p 00000000 00:00 0 
+2aaab66c3000-2aaab6ac3000 rwxp 00000000 00:00 0 
+2aaab6ac3000-2aaab6ac4000 ---p 00000000 00:00 0 
+2aaab6ac4000-2aaab6ec4000 rwxp 00000000 00:00 0 
+2aaab6ec4000-2aaab6ec5000 ---p 00000000 00:00 0 
+2aaab6ec5000-2aaab72c5000 rwxp 00000000 00:00 0 
+2aaab72c5000-2aaab72c6000 ---p 00000000 00:00 0 
+2aaab72c6000-2aaab76c6000 rwxp 00000000 00:00 0 
+2aaab76c6000-2aaab76c7000 ---p 00000000 00:00 0 
+2aaab76c7000-2aaab7ac7000 rwxp 00000000 00:00 0 
+2aaab7ac7000-2aaab7ac8000 ---p 00000000 00:00 0 
+2aaab7ac8000-2aaab7ec8000 rwxp 00000000 00:00 0 
+2aaab7ec8000-2aaab7ec9000 ---p 00000000 00:00 0 
+2aaab7ec9000-2aaab82c9000 rwxp 00000000 00:00 0 
+2aaab82c9000-2aaab82ca000 ---p 00000000 00:00 0 
+2aaab82ca000-2aaab86ca000 rwxp 00000000 00:00 0 
+2aaab86ca000-2aaab86cb000 ---p 00000000 00:00 0 
+2aaab86cb000-2aaab8acb000 rwxp 00000000 00:00 0 
+2aaab8acb000-2aaab8acc000 ---p 00000000 00:00 0 
+2aaab8acc000-2aaab8ecc000 rwxp 00000000 00:00 0 
+2aaab8ecc000-2aaab8ecd000 ---p 00000000 00:00 0 
+2aaab8ecd000-2aaab92cd000 rwxp 00000000 00:00 0 
+2aaab92cd000-2aaab92ce000 ---p 00000000 00:00 0 
+2aaab92ce000-2aaab96ce000 rwxp 00000000 00:00 0 
+2aaab96ce000-2aaab96cf000 ---p 00000000 00:00 0 
+2aaab96cf000-2aaab9acf000 rwxp 00000000 00:00 0 
+2aaab9acf000-2aaab9ad0000 ---p 00000000 00:00 0 
+2aaab9ad0000-2aaab9ed0000 rwxp 00000000 00:00 0 
+2aaab9ed0000-2aaab9ed1000 ---p 00000000 00:00 0 
+2aaab9ed1000-2aaaba6d1000 rwxp 00000000 00:00 0 
+2aaaba6d1000-2aaaba6d2000 ---p 00000000 00:00 0 
+2aaaba6d2000-2aaabaad2000 rwxp 00000000 00:00 0 
+2aaabaad2000-2aaabaad3000 ---p 00000000 00:00 0 
+2aaabaad3000-2aaabaed3000 rwxp 00000000 00:00 0 
+2aaabaed3000-2aaabaed4000 ---p 00000000 00:00 0 
+2aaabaed4000-2aaabb2d4000 rwxp 00000000 00:00 0 
+2aaabb2d4000-2aaabb2d5000 ---p 00000000 00:00 0 
+2aaabb2d5000-2aaabb6d5000 rwxp 00000000 00:00 0 
+2aaabb6d5000-2aaabb6d6000 ---p 00000000 00:00 0 
+2aaabb6d6000-2aaabbad6000 rwxp 00000000 00:00 0 
+2aaabbad6000-2aaabbad7000 ---p 00000000 00:00 0 
+2aaabbad7000-2aaabbed7000 rwxp 00000000 00:00 0 
+2aaabbed7000-2aaabbed8000 ---p 00000000 00:00 0 
+2aaabbed8000-2aaabc2d8000 rwxp 00000000 00:00 0 
+2aaabc2d8000-2aaabc2d9000 ---p 00000000 00:00 0 
+2aaabc2d9000-2aaabc6d9000 rwxp 00000000 00:00 0 
+2aaabc6d9000-2aaabc6da000 ---p 00000000 00:00 0 
+2aaabc6da000-2aaabcada000 rwxp 00000000 00:00 0 
+2aaabcada000-2aaabcadb000 ---p 00000000 00:00 0 
+2aaabcadb000-2aaabcedb000 rwxp 00000000 00:00 0 
+2aaabcedb000-2aaabcedc000 ---p 00000000 00:00 0 
+2aaabcedc000-2aaabd2dc000 rwxp 00000000 00:00 0 
+2aaabd2dc000-2aaabd2dd000 ---p 00000000 00:00 0 
+2aaabd2dd000-2aaabd6dd000 rwxp 00000000 00:00 0 
+2aaabd6dd000-2aaabd6de000 ---p 00000000 00:00 0 
+2aaabd6de000-2aaabdade000 rwxp 00000000 00:00 0 
+2aaabdade000-2aaabdadf000 ---p 00000000 00:00 0 
+2aaabdadf000-2aaabdedf000 rwxp 00000000 00:00 0 
+2aaabdedf000-2aaabdee0000 ---p 00000000 00:00 0 
+2aaabdee0000-2aaabe2e0000 rwxp 00000000 00:00 0 
+2aaac0000000-2aaac3fed000 rwxp 00000000 00:00 0 
+2aaac3fed000-2aaac4000000 ---p 00000000 00:00 0 
+2aaac4000000-2aaac7fd1000 rwxp 00000000 00:00 0 
+2aaac7fd1000-2aaac8000000 ---p 00000000 00:00 0 
+2aaac8000000-2aaacbc01000 rwxp 00000000 00:00 0 
+2aab64000000-2aab67dee000 rwxp 00000000 00:00 0 
+2aab67dee000-2aab68000000 ---p 00000000 00:00 0 
+2aab68000000-2aab6bbb5000 rwxp 00000000 00:00 0 
+2aab6bbb5000-2aab6c000000 ---p 00000000 00:00 0 
+2aab6c000000-2aab6fa96000 rwxp 00000000 00:00 0 
+2aab6fa96000-2aab70000000 ---p 00000000 00:00 0 
+2aab70000000-2aab73a19000 rwxp 00000000 00:00 0 
+2aab73a19000-2aab74000000 ---p 00000000 00:00 0 
+2aab74000000-2aab77ae7000 rwxp 00000000 00:00 0 
+2aab77ae7000-2aab78000000 ---p 00000000 00:00 0 
+2aab78000000-2aab7bc1d000 rwxp 00000000 00:00 0 
+2aab7bc1d000-2aab7c000000 ---p 00000000 00:00 0 
+2aab7c000000-2aab7ff9b000 rwxp 00000000 00:00 0 
+2aab7ff9b000-2aab80000000 ---p 00000000 00:00 0 
+2aab80000000-2aab83dd8000 rwxp 00000000 00:00 0 
+2aab83dd8000-2aab84000000 ---p 00000000 00:00 0 
+2aab84000000-2aab8796c000 rwxp 00000000 00:00 0 
+2aab8796c000-2aab88000000 ---p 00000000 00:00 0 
+2aab88000000-2aab8b923000 rwxp 00000000 00:00 0 
+2aab8b923000-2aab8c000000 ---p 00000000 00:00 0 
+2aab8c000000-2aab8f8a3000 rwxp 00000000 00:00 0 
+2aab8f8a3000-2aab90000000 ---p 00000000 00:00 0 
+2aab90000000-2aab939d4000 rwxp 00000000 00:00 0 
+2aab939d4000-2aab94000000 ---p 00000000 00:00 0 
+2aab94000000-2aab97f87000 rwxp 00000000 00:00 0 
+2aab97f87000-2aab98000000 ---p 00000000 00:00 0 
+2aab98000000-2aab9b902000 rwxp 00000000 00:00 0 
+2aab9b902000-2aab9c000000 ---p 00000000 00:00 0 
+2aab9c000000-2aab9fdc7000 rwxp 00000000 00:00 0 
+2aab9fdc7000-2aaba0000000 ---p 00000000 00:00 0 
+2aaba0000000-2aaba3fbe000 rwxp 00000000 00:00 0 
+2aaba3fbe000-2aaba4000000 ---p 00000000 00:00 0 
+2aaba4000000-2aaba77ff000 rwxp 00000000 00:00 0 
+2aaba77ff000-2aaba8000000 ---p 00000000 00:00 0 
+2aaba8000000-2aabaa40f000 rwxp 00000000 00:00 0 
+2aabaa40f000-2aabac000000 ---p 00000000 00:00 0 
+2aabac000000-2aabae3f2000 rwxp 00000000 00:00 0 
+2aabae3f2000-2aabb0000000 ---p 00000000 00:00 0 
+2aabb0000000-2aabb23f7000 rwxp 00000000 00:00 0 
+2aabb23f7000-2aabb4000000 ---p 00000000 00:00 0 
+2aabb4000000-2aabb5b07000 rwxp 00000000 00:00 0 
+2aabb5b07000-2aabb8000000 ---p 00000000 00:00 0 
+2aabb8000000-2aabbbaf8000 rwxp 00000000 00:00 0 
+2aabbbaf8000-2aabbc000000 ---p 00000000 00:00 0 
+7fffffed7000-7ffffffff000 rwxp 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+srun: error: nid00608: task 2: Aborted
+srun: Terminating job step 4469299.0
+slurmstepd: error: *** STEP 4469299.0 ON nid00606 CANCELLED AT 2017-11-27T15:44:45 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid00606: task 0: Killed
+srun: error: nid00615: task 9: Killed
+srun: error: nid00610: task 4: Killed
+srun: error: nid00609: task 3: Killed
+srun: error: nid00618: task 12: Killed
+srun: error: nid00621: task 15: Killed
+srun: error: nid00620: task 14: Killed
+srun: error: nid00607: task 1: Killed
+srun: error: nid00612: task 6: Killed
+srun: error: nid00614: task 8: Killed
+srun: error: nid00613: task 7: Killed
+srun: error: nid00616: task 10: Killed
+srun: error: nid00617: task 11: Killed
+srun: error: nid00619: task 13: Killed
+srun: error: nid00611: task 5: Killed

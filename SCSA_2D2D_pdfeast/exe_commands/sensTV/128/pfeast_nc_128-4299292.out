@@ -1,0 +1,24 @@
+
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=Scan_pfeast_nc128
+#SBATCH --output=./sensTV/128/pfeast_nc_128-%j.out
+#SBATCH --error=./sensTV/128/errors/pfeast_nc_128-%j.err
+#SBATCH --nodes=1
+#SBATCH --time=23:30:00
+
+export MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+#srun --ntasks=8 --ntasks-per-node=4 --ntasks-per-socket=2   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+#srun --ntasks=8 --ntasks-per-node=8 --ntasks-per-socket=4   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+ysrun --ntasks=16 --ntasks-per-node=16 --ntasks-per-socket=8   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+#srun --ntasks=32 --ntasks-per-node=32 --ntasks-per-socket=16   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+echo""
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_128.sh

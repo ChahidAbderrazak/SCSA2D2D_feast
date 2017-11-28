@@ -1,0 +1,37 @@
+srun: error: nid00052: task 1: Segmentation fault
+srun: Terminating job step 4469495.0
+slurmstepd: error: *** STEP 4469495.0 ON nid00051 CANCELLED AT 2017-11-27T14:39:05 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid01491: task 11: Segmentation fault
+srun: error: nid00051: task 0: Killed
+srun: error: nid01489: task 9: Killed
+srun: error: nid01488: task 8: Killed
+srun: error: nid01487: task 7: Killed
+srun: error: nid01486: task 6: Killed
+srun: error: nid00055: task 4: Killed
+srun: error: nid00056: task 5: Killed
+srun: error: nid00053: task 2: Killed
+srun: error: nid01490: task 10: Killed
+srun: error: nid00054: task 3: Killed
+srun: error: nid01492: task 12: Killed
+srun: error: nid01494: task 14: Killed
+srun: error: nid01495: task 15: Killed
+srun: error: nid01493: task 13: Killed
+srun: error: nid00051: task 0: Segmentation fault
+srun: Terminating job step 4469495.1
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid01495: task 15: Killed
+srun: error: nid01488: task 8: Killed
+srun: error: nid01489: task 9: Killed
+srun: error: nid01491: task 11: Killed
+srun: error: nid00053: task 2: Killed
+srun: error: nid01493: task 13: Killed
+srun: error: nid01486: task 6: Killed
+srun: error: nid01494: task 14: Killed
+srun: error: nid01490: task 10: Killed
+srun: error: nid01487: task 7: Killed
+srun: error: nid01492: task 12: Killed
+srun: error: nid00056: task 5: Killed
+srun: error: nid00055: task 4: Killed
+srun: error: nid00054: task 3: Killed
+srun: error: nid00052: task 1: Killed

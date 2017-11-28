@@ -1,0 +1,148 @@
+
+ MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 1
+
+| Sub-Intervals| 		| -1.08 -- 0 |
+| List M0 |   		          | 597 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.082	0.000	835	  56	 1	0	6	 inf	   47.917	   4.652	   0.866	  5.566	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	835	  56	 100	0	6	 inf	   47.917	   6.673	   0.636	  7.336	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	955	  56	 1	0	6	 inf	   47.917	   6.773	   0.635	  7.435	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	955	  56	 100	0	6	 inf	   47.917	   6.942	   0.635	  7.604	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	1024	  56	 1	0	6	 inf	   47.917	   4.809	   0.640	  5.476	 0	571	0	1	1	0	0
+
+
+Warnning(3) :The estimated Number  of eigevalues is greater than N= 1024
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 2
+
+| Sub-Intervals| 		| -1.08 -- -0.258 -- 0 |
+| List M0 |   		          | 298 -- 299 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.082	-0.258	417	  56	 1	0	6	 inf	   47.917	   3.335	   3.874	  7.232	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	417	  56	 100	0	6	 inf	   47.917	   4.289	   3.587	  7.899	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	476	  56	 1	0	6	 inf	   47.917	   4.166	   3.581	  7.761	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	476	  56	 100	0	6	 inf	   47.917	   4.709	   3.569	  8.299	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	536	  56	 1	0	6	 inf	   47.917	   4.339	   3.570	  7.931	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	536	  56	 100	0	6	 inf	   47.917	   4.428	   3.567	  8.017	 1	571	0	1	1	0	0
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 4
+
+| Sub-Intervals| 		| -1.08 -- -0.427 -- -0.258 -- -0.133 -- 0 |
+| List M0 |   		          | 150 -- 149 -- 150 -- 150 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.082	-0.427	210	  56	 1	0	6	 inf	   47.917	   6.209	   13.906	  20.135	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.427	210	  56	 100	0	6	 inf	   47.917	   5.913	   13.277	  19.204	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.427	240	  56	 1	0	6	 inf	   47.917	   5.852	   12.894	  18.759	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.427	240	  56	 100	0	6	 inf	   47.917	   5.994	   13.016	  19.023	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.427	270	  56	 1	0	6	 inf	   47.917	   6.262	   13.228	  19.515	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.427	270	  56	 100	0	6	 inf	   47.917	   6.249	   13.343	  19.615	 0	571	0	1	1	0	0
+
+ MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 1
+
+| Sub-Intervals| 		| -1.08 -- 0 |
+| List M0 |   		          | 597 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.082	0.000	835	  56	 1	0	6	 inf	   47.917	   4.585	   0.803	  5.413	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	835	  56	 100	0	6	 inf	   47.917	   6.549	   0.601	  7.170	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	955	  56	 1	0	6	 inf	   47.917	   4.626	   0.597	  5.243	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	955	  56	 100	0	6	 inf	   47.917	   6.862	   0.604	  7.486	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	0.000	1024	  56	 1	0	6	 inf	   47.917	   7.044	   0.603	  7.667	 1	571	0	1	1	0	0
+
+
+Warnning(3) :The estimated Number  of eigevalues is greater than N= 1024
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 2
+
+| Sub-Intervals| 		| -1.08 -- -0.258 -- 0 |
+| List M0 |   		          | 298 -- 299 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.082	-0.258	417	  56	 1	0	6	 inf	   47.917	   2.799	   2.708	  5.528	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	417	  56	 100	0	6	 inf	   47.917	   3.812	   2.525	  6.356	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	476	  56	 1	0	6	 inf	   47.917	   2.836	   2.538	  5.395	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	476	  56	 100	0	6	 inf	   47.917	   3.778	   2.546	  6.345	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	536	  56	 1	0	6	 inf	   47.917	   2.956	   2.541	  5.518	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.258	536	  56	 100	0	6	 inf	   47.917	   3.876	   2.553	  6.450	 1	571	0	1	1	0	0
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 4
+
+| Sub-Intervals| 		| -1.08 -- -0.427 -- -0.258 -- -0.133 -- 0 |
+| List M0 |   		          | 150 -- 149 -- 150 -- 150 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.082	-0.427	210	  56	 1	0	6	 inf	   47.917	   3.004	   5.760	  8.789	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.427	210	  56	 100	0	6	 inf	   47.917	   3.386	   5.567	  8.969	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.427	240	  56	 1	0	6	 inf	   47.917	   2.903	   5.575	  8.494	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.427	240	  56	 100	0	6	 inf	   47.917	   3.541	   5.581	  9.136	 1	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.427	270	  56	 1	0	6	 inf	   47.917	   3.012	   5.587	  8.614	 0	571	0	1	1	0	0
+0.260	0.500	1.000	-1.082	-0.427	270	  56	 100	0	6	 inf	   47.917	   2.985	   5.607	  8.613	 0	571	0	1	1	0	0
+
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=pfeast_nc32
+#SBATCH --output=./sensTV/32/pfeast_nc_32-%j.out
+#SBATCH --error=./sensTV/32/errors/pfeast_nc_32-%j.err
+#SBATCH --nodes=1
+#SBATCH --time=23:59:00
+
+
+export MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+echo""
+echo " MKL_NUM_THREADS=32 OMP_NUM_THREADS=32"
+echo""
+
+srun --ntasks=1 --ntasks-per-node=1   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+srun --ntasks=2 --ntasks-per-node=2 --ntasks-per-socket=1   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+srun --ntasks=4 --ntasks-per-node=4 --ntasks-per-socket=2   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+
+export MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+echo""
+echo " MKL_NUM_THREADS=16 OMP_NUM_THREADS=16"
+echo""
+
+srun --ntasks=1 --ntasks-per-node=1   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+srun --ntasks=2 --ntasks-per-node=2 --ntasks-per-socket=1   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+srun --ntasks=4 --ntasks-per-node=4 --ntasks-per-socket=2   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+
+echo""
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_32.sh

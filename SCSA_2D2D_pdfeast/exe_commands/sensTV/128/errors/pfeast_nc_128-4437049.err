@@ -1,0 +1,12 @@
+srun: error: nid06713: tasks 0-1,3-31: Exited with exit code 255
+srun: Terminating job step 4437049.0
+slurmstepd: error: *** STEP 4437049.0 ON nid06713 CANCELLED AT 2017-11-20T10:24:08 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid06713: task 2: Exited with exit code 255
+srun: error: nid06717: tasks 128-159: Killed
+srun: error: nid06715: tasks 64-95: Killed
+srun: error: nid06718: tasks 160-191: Killed
+srun: error: nid06716: tasks 96-127: Killed
+srun: error: nid06719: tasks 192-223: Killed
+srun: error: nid06728: tasks 224-255: Killed
+srun: error: nid06714: tasks 32-63: Killed

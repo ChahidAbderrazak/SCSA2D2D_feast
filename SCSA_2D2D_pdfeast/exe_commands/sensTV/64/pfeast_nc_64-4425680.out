@@ -1,0 +1,126 @@
+
+ MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 4
+
+| Sub-Intervals| 		| -1.09 -- -0.454 -- -0.285 -- -0.138 -- 0 |
+| List M0 |   		          | 660 -- 667 -- 675 -- 676 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.087	-0.454	660	  56	 1	0	6	 inf	   50.615	   127.627	   184.709	  312.556	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	660	  56	 100	0	6	 inf	   50.615	   175.373	   186.458	  362.029	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	792	  56	 1	0	6	 inf	   50.615	   137.376	   184.911	  322.482	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	792	  56	 100	0	6	 inf	   50.615	   186.409	   183.694	  370.301	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	923	  56	 1	0	6	 inf	   50.615	   142.117	   186.108	  328.421	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	923	  56	 100	0	6	 inf	   50.615	   192.973	   186.747	  379.946	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1056	  56	 1	0	6	 inf	   50.615	   148.451	   186.797	  335.443	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1056	  56	 100	0	6	 inf	   50.615	   197.069	   185.982	  383.277	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1188	  56	 1	0	6	 inf	   50.615	   158.787	   187.524	  346.506	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1188	  56	 100	0	6	 inf	   50.615	   208.159	   188.861	  397.233	 1	2560	0	1	1	0	0
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 8
+
+| Sub-Intervals| 		| -1.09 -- -0.556 -- -0.454 -- -0.366 -- -0.285 -- -0.209 -- -0.138 -- -0.0689 -- 0 |
+| List M0 |   		          | 337 -- 325 -- 334 -- 332 -- 331 -- 344 -- 339 -- 338 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.087	-0.556	337	  56	 1	0	6	 inf	   50.615	   230.349	   454.736	  685.346	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	337	  56	 100	0	6	 inf	   50.615	   286.709	   454.482	  741.394	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	404	  56	 1	0	6	 inf	   50.615	   264.212	   463.449	  727.856	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	404	  56	 100	0	6	 inf	   50.615	   296.726	   468.611	  765.543	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	471	  56	 1	0	6	 inf	   50.615	   272.607	   469.318	  742.122	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	471	  56	 100	0	6	 inf	   50.615	   311.316	   468.327	  779.869	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	539	  56	 1	0	6	 inf	   50.615	   280.199	   468.118	  748.514	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	539	  56	 100	0	6	 inf	   50.615	   299.002	   463.998	  763.198	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	606	  56	 1	0	6	 inf	   50.615	   262.304	   464.110	  726.608	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	606	  56	 100	0	6	 inf	   50.615	   306.795	   467.694	  774.708	 1	2560	0	1	1	0	0
+
+ MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 4
+
+| Sub-Intervals| 		| -1.09 -- -0.454 -- -0.285 -- -0.138 -- 0 |
+| List M0 |   		          | 660 -- 667 -- 675 -- 676 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.087	-0.454	660	  56	 1	0	6	 inf	   50.615	   82.899	   90.530	  173.667	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	660	  56	 100	0	6	 inf	   50.615	   129.219	   90.856	  220.286	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	792	  56	 1	0	6	 inf	   50.615	   90.572	   90.902	  181.671	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	792	  56	 100	0	6	 inf	   50.615	   139.591	   90.880	  230.670	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	923	  56	 1	0	6	 inf	   50.615	   99.834	   89.573	  189.609	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	923	  56	 100	0	6	 inf	   50.615	   150.121	   89.527	  239.851	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1056	  56	 1	0	6	 inf	   50.615	   111.809	   89.106	  201.112	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1056	  56	 100	0	6	 inf	   50.615	   159.212	   88.912	  248.339	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1188	  56	 1	0	6	 inf	   50.615	   156.354	   89.158	  245.711	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.454	1188	  56	 100	0	6	 inf	   50.615	   170.518	   89.348	  260.063	 1	2560	0	1	1	0	0
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 8
+
+| Sub-Intervals| 		| -1.09 -- -0.556 -- -0.454 -- -0.366 -- -0.285 -- -0.209 -- -0.138 -- -0.0689 -- 0 |
+| List M0 |   		          | 337 -- 325 -- 334 -- 332 -- 331 -- 344 -- 339 -- 338 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.087	-0.556	337	  56	 1	0	6	 inf	   50.615	   150.595	   225.958	  376.787	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	337	  56	 100	0	6	 inf	   50.615	   173.423	   224.424	  398.056	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	404	  56	 1	0	6	 inf	   50.615	   133.510	   222.526	  356.234	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	404	  56	 100	0	6	 inf	   50.615	   161.854	   222.440	  384.487	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	471	  56	 1	0	6	 inf	   50.615	   159.044	   223.643	  382.887	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	471	  56	 100	0	6	 inf	   50.615	   186.959	   222.714	  409.892	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	539	  56	 1	0	6	 inf	   50.615	   170.412	   222.056	  392.666	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	539	  56	 100	0	6	 inf	   50.615	   188.686	   222.299	  411.179	 1	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	606	  56	 1	0	6	 inf	   50.615	   158.329	   222.088	  380.612	 0	2560	0	1	1	0	0
+0.260	0.500	1.000	-1.087	-0.556	606	  56	 100	0	6	 inf	   50.615	   203.920	   222.423	  426.585	 1	2560	0	1	1	0	0
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=pfeast_nc64
+#SBATCH --output=./sensTV/64/pfeast_nc_64-%j.out
+#SBATCH --error=./sensTV/64/errors/pfeast_nc_64-%j.err
+#SBATCH --nodes=1
+#SBATCH --time=23:59:00
+
+export MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+echo""
+echo " MKL_NUM_THREADS=32 OMP_NUM_THREADS=32"
+echo""
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=4 --ntasks-per-node=4  --ntasks-per-socket=2  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=8 --ntasks-per-node=8  --ntasks-per-socket=4  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=16 --ntasks-per-node=16  --ntasks-per-socket=8  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+
+export MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+echo""
+echo " MKL_NUM_THREADS=16 OMP_NUM_THREADS=16"
+echo""
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=4 --ntasks-per-node=4  --ntasks-per-socket=2  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=8 --ntasks-per-node=8  --ntasks-per-socket=4  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+srun --ntasks=16 --ntasks-per-node=16  --ntasks-per-socket=8  ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img64_Lena64.dat ../dat_data/img64_Lena64.dat  -N 64 -h 0.26 -gm 0.5
+
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_64.sh
+echo""

@@ -1,0 +1,4 @@
+srun: error: nid01186: task 0: Exited with exit code 255
+srun: Terminating job step 4291215.0
+srun: error: nid01186: tasks 0-3: Exited with exit code 255
+srun: Terminating job step 4291215.2

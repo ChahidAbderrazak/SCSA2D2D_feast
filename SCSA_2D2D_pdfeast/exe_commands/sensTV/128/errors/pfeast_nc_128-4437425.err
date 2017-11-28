@@ -1,0 +1,10 @@
+srun: error: nid01644: tasks 16-23: Exited with exit code 255
+srun: Terminating job step 4437425.0
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid01649: tasks 56-63: Exited with exit code 255
+srun: error: nid01647: tasks 40-47: Exited with exit code 255
+srun: error: nid01642: tasks 0-7: Exited with exit code 255
+srun: error: nid01645: tasks 24-31: Exited with exit code 255
+srun: error: nid01648: tasks 48-55: Exited with exit code 255
+srun: error: nid01643: tasks 8-15: Exited with exit code 255
+srun: error: nid01646: tasks 32-39: Exited with exit code 255

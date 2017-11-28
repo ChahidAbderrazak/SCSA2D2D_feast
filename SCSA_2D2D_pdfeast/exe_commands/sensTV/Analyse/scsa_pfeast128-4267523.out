@@ -1,0 +1,58 @@
+ Splitting interval is [-1.27699,0] into 8sub_intervals  with M0=7831
+
+
+Feast 3.0:  image size = 128 X 128  ,   # Sub-Intervals= 8
+
+| Search Intervals 	|-1.27699 -- -0.503811 -- -0.384094 -- -0.28507 -- -0.204517 -- -0.150192 -- -0.0990631 -- -0.0526273 -- 0|
+| List M0  		|967 -- 952 -- 974 -- 993 -- 947 -- 1032 -- 937 -- 1034|
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 M0 	 Emin 	 Emax 	 Nb_cntour_points 	 PSNR0 	 PSNR 	 time_eig 	 time_Split 	 Totale time 	 nb_iter  	 Nh % 	 info
+0.260000	0.500000	1.000000	967	-1.276987	-0.503811	8	inf	48.688469	5819.662106	2952.264233	8774.872345	8	7462	0
+ Splitting interval is [-1.27699,0] into 16sub_intervals  with M0=7831
+
+
+Feast 3.0:  image size = 128 X 128  ,   # Sub-Intervals= 16
+
+| Search Intervals 	|-1.27699 -- -0.583623 -- -0.503811 -- -0.436899 -- -0.384094 -- -0.333081 -- -0.28507 -- -0.244982 -- -0.204517 -- -0.175757 -- -0.150192 -- -0.126725 -- -0.0990631 -- -0.0773931 -- -0.0526273 -- -0.0296029 -- 0|
+| List M0  		|483 -- 481 -- 504 -- 447 -- 466 -- 510 -- 446 -- 548 -- 470 -- 476 -- 479 -- 553 -- 433 -- 502 -- 459 -- 575|
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 M0 	 Emin 	 Emax 	 Nb_cntour_points 	 PSNR0 	 PSNR 	 time_eig 	 time_Split 	 Totale time 	 nb_iter  	 Nh % 	 info
+0.260000	0.500000	1.000000	483	-1.276987	-0.583623	8	inf	48.688469	4372.728710	11648.115877	16023.797096	8	7462	0
+
+Warrning : M0_Total = 7831  Please change your input attributs  such that : 7 < n <  31 with  1000 > m0 > 250
+
+
+Warrning : M0_Total = 7831  Please change your input attributs  such that : 7 < n <  31 with  1000 > m0 > 250
+
+
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=scsa_pfeast128
+#SBATCH --output=./sensTV/scsa_pfeast128-%j.out
+#SBATCH --error=./sensTV/errors/scsa_pfeast128-%j.err
+#SBATCH --nodes=2
+#SBATCH --time=10:30:00
+
+export MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=8 --ntasks-per-node=4 --ntasks-per-socket=2   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=16 --ntasks-per-node=8 --ntasks-per-socket=4   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=32 --ntasks-per-node=16 --ntasks-per-socket=8   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=64 --ntasks-per-node=32 --ntasks-per-socket=16   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+
+echo""
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_128.sh

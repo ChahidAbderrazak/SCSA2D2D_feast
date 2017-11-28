@@ -1,0 +1,52 @@
+ Splitting interval is [-1.08153,0] into 0sub_intervals  with M0=597
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 1
+
+| Search Intervals 	|-1.08153 -- 0|
+| List M0  		|597|
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 M0 	 Emin 	 Emax 	 Nb_cntour_points 	 PSNR0 	 PSNR 	 time_eig 	 time_Split 	 Totale time 	 nb_iter  	 Nh % 	 info
+0.260000	0.500000	1.000000	597	-1.081527	0.000000	8	inf	47.916912	10.226470	2.014456	12.396496	4	571	0
+ Splitting interval is [-1.08153,0] into 2sub_intervals  with M0=597
+
+
+Feast 3.0:  image size = 32 X 32  ,   # Sub-Intervals= 2
+
+| Search Intervals 	|-1.08153 -- -0.257708 -- 0|
+| List M0  		|298 -- 299|
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 M0 	 Emin 	 Emax 	 Nb_cntour_points 	 PSNR0 	 PSNR 	 time_eig 	 time_Split 	 Totale time 	 nb_iter  	 Nh % 	 info
+0.260000	0.500000	1.000000	298	-1.081527	-0.257708	8	inf	47.916912	5.251217	2.843146	8.157129	5	571	0
+
+Warrning : M0_Total = 597  Please change your input attributs  such that : 0 < n <  2 with  1000 > m0 > 250
+
+
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=scsa_pfeast32
+#SBATCH --output=./sensTV/scsa_pfeast32-%j.out
+#SBATCH --error=./sensTV/errors/scsa_pfeast32-%j.err
+#SBATCH --nodes=1
+#SBATCH --time=00:30:00
+
+export MKL_NUM_THREADS=16 OMP_NUM_THREADS=16
+
+srun --ntasks=1 --ntasks-per-node=1   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+srun --ntasks=2 --ntasks-per-node=2 --ntasks-per-socket=1   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+srun --ntasks=4 --ntasks-per-node=4 --ntasks-per-socket=2   ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img32_Lena32.dat ../dat_data/img32_Lena32.dat  -N 32 -h 0.26 -gm 0.5
+
+echo""
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_32.sh

@@ -1,1 +1,0 @@
-mpirun MKL_NUM_THREADS=2  -ppn 2 -n 2 ./SCSA_2D2D_dfeast_parallel --data ../dat_data/s_Lena32.dat ../dat_data/s_Lena32.dat -N 32

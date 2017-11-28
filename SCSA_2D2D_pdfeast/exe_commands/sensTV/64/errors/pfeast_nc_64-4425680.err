@@ -1,0 +1,10 @@
+srun: error: nid00155: tasks 0-1: Segmentation fault
+srun: Terminating job step 4425680.2
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: *** STEP 4425680.2 ON nid00155 CANCELLED AT 2017-11-18T22:16:07 ***
+srun: error: nid00155: tasks 2-15: Killed
+srun: error: nid00155: tasks 0-1: Segmentation fault
+srun: Terminating job step 4425680.5
+slurmstepd: error: *** STEP 4425680.5 ON nid00155 CANCELLED AT 2017-11-19T00:15:11 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: error: nid00155: tasks 2-15: Killed

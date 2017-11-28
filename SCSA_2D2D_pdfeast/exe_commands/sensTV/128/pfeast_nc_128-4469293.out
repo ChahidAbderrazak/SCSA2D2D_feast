@@ -1,0 +1,56 @@
+
+ MKL_NUM_THREADS=64 OMP_NUM_THREADS=64
+
+
+
+Feast 3.0:  image size = 128 X 128  ,   # Sub-Intervals= 16
+
+| Sub-Intervals| 		| -1.28 -- -0.584 -- -0.504 -- -0.437 -- -0.384 -- -0.333 -- -0.285 -- -0.245 -- -0.205 -- -0.176 -- -0.15 -- -0.127 -- -0.0991 -- -0.0774 -- -0.0526 -- -0.0296 -- 0 |
+| List M0 |   		          | 460 -- 459 -- 480 -- 426 -- 444 -- 486 -- 425 -- 522 -- 448 -- 454 -- 457 -- 527 -- 413 -- 479 -- 438 -- 548 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.277	-0.584	460	  8	 1	0	6	 inf	   45.092	   2366.672	   2440.296	  4809.614	 13	7395	22	1	1	0	0
+
+
+                            The run.sh command was:                                 
+##########################################################################################
+#!/bin/bash
+#SBATCH --account=k1251
+#SBATCH --job-name=16pfeast_nc128
+#SBATCH --output=./sensTV/128/pfeast_N16_nc_128-%j.out
+#SBATCH --error=./sensTV/128/errors/pfeast_N16_nc_128-%j.err
+#SBATCH --nodes=16
+#SBATCH --time=23:59:00
+
+export MKL_NUM_THREADS=64 OMP_NUM_THREADS=64
+echo""
+echo " MKL_NUM_THREADS=64 OMP_NUM_THREADS=64"
+echo""
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+#srun --ntasks=128 --ntasks-per-node=32 --ntasks-per-socket=16   ./SCSA_2D2D_dfeast_parallel   -nc 16  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=16 --ntasks-per-node=1  ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+
+
+export MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+echo""
+echo " MKL_NUM_THREADS=32 OMP_NUM_THREADS=32"
+echo""
+
+#srun --ntasks=1 --ntasks-per-node=1    ./SCSA_2D2D_dfeast_parallel   -nc 8 --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+#srun --ntasks=128 --ntasks-per-node=32 --ntasks-per-socket=16   ./SCSA_2D2D_dfeast_parallel   -nc 16  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+srun --ntasks=16 --ntasks-per-node=1  ./SCSA_2D2D_dfeast_parallel   -nc 8  --data ../dat_data/img128_Lena128.dat ../dat_data/img128_Lena128.dat  -N 128 -h 0.26 -gm 0.5
+
+
+
+echo""
+echo""
+echo "                            The run.sh command was:                                 "
+echo "##########################################################################################"
+cat run_128.sh
+echo""
+
+

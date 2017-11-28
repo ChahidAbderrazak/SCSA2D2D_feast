@@ -1,0 +1,7 @@
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: got SIGCONT
+srun: got SIGCONT
+slurmstepd: error: *** STEP 4272839.0 ON nid01833 CANCELLED AT 2017-10-07T18:23:24 ***
+slurmstepd: error: *** JOB 4272839 ON nid01833 CANCELLED AT 2017-10-07T18:23:24 ***
+srun: forcing job termination
+srun: forcing job termination

@@ -1,0 +1,15 @@
+
+ MKL_NUM_THREADS=32 OMP_NUM_THREADS=32
+
+
+
+Feast 3.0:  image size = 64 X 64  ,   # Sub-Intervals= 4
+
+| Sub-Intervals| 		| -1.09 -- -0.454 -- -0.285 -- -0.138 -- 0 |
+| List M0 |   		          | 660 -- 667 -- 675 -- 676 |
+
+
+Parallel Feast Double
+
+h 	 gm 	 fe 	 Emin 	 Emax 	 M0 	 #cnt 	 ratio 	 Meth 	 eps 	 PSNR0  	 PSNR 	 eig(s) 	 Split(s) 	 Total(s) 	 #iter 	 Nh % 	 info	 store_fact 	 cnvgce_trace_Resdl 	 guess_M0 % 	  Run_Q_M0
+0.260	0.500	1.000	-1.087	-0.454	923	  56	 1	0	6	 inf	   50.615	   210.597	   184.809	  395.661	 1	2560	0	1	1	0	0

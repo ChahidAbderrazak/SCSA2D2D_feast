@@ -1,0 +1,16 @@
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+srun: error: nid00032: task 0: Exited with exit code 2
+srun: Terminating job step 4425493.0
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+srun: error: nid00032: tasks 0-1: Exited with exit code 2
+srun: Terminating job step 4425493.1
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+slurmstepd: error: execve(): /lustre/project/k1251/Workspace/Script_in_Process/./SCSA_2D2D_dfeast_parallel: No such file or directory
+srun: got SIGCONT
+slurmstepd: error: *** JOB 4425493 ON nid00032 CANCELLED AT 2017-11-18T16:47:52 ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: forcing job termination
+srun: forcing job termination

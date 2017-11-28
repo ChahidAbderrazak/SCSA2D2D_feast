@@ -1,0 +1,7 @@
+srun: Warning: can't honor --ntasks-per-node set to 32 which doesn't match the requested tasks 64 with the number of requested nodes 1. Ignoring --ntasks-per-node.
+slurmstepd: error: *** STEP 4437543.0 ON nid00722 CANCELLED AT 2017-11-21T07:17:18 DUE TO JOB REQUEUE ***
+slurmstepd: error: *** JOB 4437543 ON nid00722 CANCELLED AT 2017-11-21T07:17:18 DUE TO JOB REQUEUE ***
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+srun: got SIGCONT
+srun: got SIGCONT
+srun: forcing job termination

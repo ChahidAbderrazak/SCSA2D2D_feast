@@ -1,0 +1,10 @@
+srun: error: nid07646: task 0: Segmentation fault
+srun: Terminating job step 4425676.2
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: *** STEP 4425676.2 ON nid07646 CANCELLED AT 2017-11-18T21:59:51 ***
+srun: error: nid07646: tasks 1-15: Killed
+srun: error: nid07646: task 0: Segmentation fault
+srun: Terminating job step 4425676.5
+srun: Job step aborted: Waiting up to 302 seconds for job step to finish.
+slurmstepd: error: *** STEP 4425676.5 ON nid07646 CANCELLED AT 2017-11-19T00:00:46 ***
+srun: error: nid07646: tasks 1-15: Killed
